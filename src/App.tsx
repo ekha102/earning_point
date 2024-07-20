@@ -2,22 +2,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Layout from './Components/Layout';
 import "bootstrap/dist/css/bootstrap.min.css";
+import HomeLayout from './Components/Home/HomeLayout';
 
 const App: React.FC = () => {
 
   return (
-    <>
-      <div>
-        <h1>Testing</h1>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Layout />}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomeLayout/>} />
 
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
