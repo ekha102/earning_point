@@ -1,9 +1,33 @@
+import useSWR from "swr"
+import { getEarningPoint } from "../../API/EarningPoint"
+
+
 
 export default function HomeLayout() {
+
+  const { data: earningPointList=[] } = useSWR("earningPoint", getEarningPoint);
+  console.log(earningPointList);
+
+  
   return (
     <div>
-      <h1>HomeLayout Testing</h1>
-      <h5>Testing</h5>
+      {/* <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Point</th>
+          </tr>
+        </thead>
+        <tbody>
+          {earningPointList.map(ele) => {
+            <tr key={ele.user_id}>
+              <td>{ele.first_name}</td>
+              <td></td>
+            </tr>
+          }}         
+        </tbody>
+      </table> */}
+      
     </div>
   )
 }
